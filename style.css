@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 40px;
+    margin: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* === Base Text Field === */
+.text-field {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.text-field input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-color: white;
+    transition: border-color 0.3s ease;
+    display: block;
+}
+
+/* === Size Variants === */
+.text-field.small input {
+    padding: 8px 10px;
+    font-size: 14px;
+}
+
+.text-field.medium input {
+    padding: 14px 12px;
+    font-size: 16px;
+}
+
+.text-field.large input {
+    padding: 18px 14px;
+    font-size: 18px;
+}
+
+/* === Label === */
+.text-field label {
+    position: absolute;
+    left: 12px;
+    color: #888;
+    background-color: transparent;
+    padding: 0 4px;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+/* Label Position Based on Size */
+.text-field.small label {
+    top: 8px;
+}
+
+.text-field.medium label {
+    top: 14px;
+}
+
+.text-field.large label {
+    top: 18px;
+}
+
+/* === Floating Label === */
+.text-field input:focus + label,
+.text-field input:not(:placeholder-shown) + label {
+    top: -8px;
+    font-size: 12px;
+    color: #1976d2;
+    background-color: white;
+}
+
+/* === Input Focus State === */
+.text-field input:focus {
+    border-color: #1976d2;
+}
+
+/* === Helper Text === */
+.text-field .helper-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+    margin-left: 8px;
+}
+
+/* === Error Handling === */
+.text-field .error-message {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-left: 8px;
+}
+
+.text-field.error input {
+    border-color: red;
+}
+
+.text-field.error label {
+    color: red;
+}
+
+.text-field.error .error-message {
+    display: block;
+}
+
+.text-field.error .helper-text {
+    display: none;
+}
+
+/* === Responsive Design === */
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .text-field.small input {
+        font-size: 13px;
+    }
+
+    .text-field.medium input {
+        font-size: 15px;
+    }
+
+    .text-field.large input {
+        font-size: 17px;
+    }
+}
